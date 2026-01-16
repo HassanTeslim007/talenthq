@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/talenthq/static/css/main.3edb7acd.css",
+    "main.js": "/talenthq/static/js/main.88dce5c7.js",
+    "static/js/453.ecd964ff.chunk.js": "/talenthq/static/js/453.ecd964ff.chunk.js",
+    "index.html": "/talenthq/index.html",
+    "main.3edb7acd.css.map": "/talenthq/static/css/main.3edb7acd.css.map",
+    "main.88dce5c7.js.map": "/talenthq/static/js/main.88dce5c7.js.map",
+    "453.ecd964ff.chunk.js.map": "/talenthq/static/js/453.ecd964ff.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3edb7acd.css",
+    "static/js/main.88dce5c7.js"
+  ]
+}
