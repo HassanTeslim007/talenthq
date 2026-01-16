@@ -7,11 +7,11 @@ const TalentHQWebsite = () => {
 
     // Hero carousel images
     const heroImages = [
-        { src: '/images/logo.png', alt: 'TalentHQ Nigeria - HR Consulting', isLogo: true },
-        { src: '/images/hero-realistic.png', alt: 'Professional HR team collaboration' },
-        { src: '/images/hero-interview.png', alt: 'HR professional conducting interview' },
-        { src: '/images/hero-training.png', alt: 'Corporate training session' },
-        { src: '/images/hero-celebration.png', alt: 'Team celebrating success' }
+        { src: `${process.env.PUBLIC_URL}/images/logo.png`, alt: 'TalentHQ Nigeria - HR Consulting', isLogo: true },
+        { src: `${process.env.PUBLIC_URL}/images/hero-realistic.png`, alt: 'Professional HR team collaboration' },
+        { src: `${process.env.PUBLIC_URL}/images/hero-interview.png`, alt: 'HR professional conducting interview' },
+        { src: `${process.env.PUBLIC_URL}/images/hero-training.png`, alt: 'Corporate training session' },
+        { src: `${process.env.PUBLIC_URL}/images/hero-celebration.png`, alt: 'Team celebrating success' }
     ];
 
     // Auto-rotate carousel every 5 seconds
@@ -35,7 +35,7 @@ const TalentHQWebsite = () => {
                     <div className="flex justify-between items-center h-16">
                         <div className="flex items-center gap-3">
                             <img
-                                src="/images/logo.png"
+                                src={`${process.env.PUBLIC_URL}/images/logo.png`}
                                 alt="TalentHQ Logo"
                                 className="h-10 w-auto"
                             />
@@ -113,8 +113,8 @@ const TalentHQWebsite = () => {
                                             src={image.src}
                                             alt={image.alt}
                                             className={`w-full h-full ${image.isLogo
-                                                    ? 'object-contain bg-gradient-to-br from-blue-50 to-white p-12'
-                                                    : 'object-cover'
+                                                ? 'object-contain bg-gradient-to-br from-blue-50 to-white p-12'
+                                                : 'object-cover'
                                                 }`}
                                         />
                                     </div>
@@ -153,7 +153,7 @@ const TalentHQWebsite = () => {
                             {/* Image container with gradient background */}
                             <div className="relative bg-gradient-to-br from-blue-50 via-white to-green-50 p-6 rounded-2xl shadow-xl transform hover:shadow-2xl transition-all duration-300">
                                 <img
-                                    src="/images/team-growth.png"
+                                    src={`${process.env.PUBLIC_URL}/images/team-growth.png`}
                                     alt="Startup team growth and organizational structure"
                                     className="w-full h-auto rounded-lg relative z-10"
                                 />
@@ -399,7 +399,7 @@ const TalentHQWebsite = () => {
                                 {/* Image with frame */}
                                 <div className="relative bg-white p-3 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
                                     <img
-                                        src="/images/moshood.png"
+                                        src={`${process.env.PUBLIC_URL}/images/moshood.png`}
                                         alt="Moshood Abayomi Hassan - HR Consultant"
                                         className="w-full h-auto rounded-xl"
                                     />
@@ -516,7 +516,7 @@ const TalentHQWebsite = () => {
                                 </div>
 
                                 <img
-                                    src="/images/services-illustration.png"
+                                    src={`${process.env.PUBLIC_URL}/images/services-illustration.png`}
                                     alt="HR services and documentation"
                                     className="w-full h-auto rounded-lg mt-4"
                                 />
