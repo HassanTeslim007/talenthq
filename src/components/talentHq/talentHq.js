@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, CheckCircle, Users, FileText, TrendingUp, Mail, Phone, ArrowRight } from 'lucide-react';
+import ThemeSwitcher from '../ThemeSwitcher';
 
 const TalentHQWebsite = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -28,60 +29,64 @@ const TalentHQWebsite = () => {
     };
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
             {/* Navigation */}
-            <nav className="fixed top-0 w-full bg-white shadow-md z-50">
+            <nav className="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-md z-50 transition-colors duration-300">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-16">
                         <div className="flex items-center gap-3">
                             <img
                                 src={`${process.env.PUBLIC_URL}/images/logo.png`}
                                 alt="TalentHQ Logo"
-                                className="h-10 w-auto"
+                                className="h-10 w-auto dark:invert dark:brightness-200 transition-all duration-300"
                             />
-                            <div className="hidden md:block text-sm font-medium text-gray-600">Nigeria</div>
+                            <div className="hidden md:block text-sm font-medium text-gray-600 dark:text-gray-400">Nigeria</div>
                         </div>
 
-                        <div className="hidden md:flex space-x-8">
-                            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-600 transition">Home</button>
-                            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-600 transition">Services</button>
-                            <button onClick={() => scrollToSection('process')} className="text-gray-700 hover:text-blue-600 transition">Process</button>
-                            <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 transition">About</button>
-                            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 transition">Contact</button>
+                        <div className="hidden md:flex space-x-8 items-center">
+                            <button onClick={() => scrollToSection('home')} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Home</button>
+                            <button onClick={() => scrollToSection('services')} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Services</button>
+                            <button onClick={() => scrollToSection('process')} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Process</button>
+                            <button onClick={() => scrollToSection('about')} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">About</button>
+                            <button onClick={() => scrollToSection('contact')} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Contact</button>
+                            <ThemeSwitcher />
                         </div>
 
                         <button onClick={() => scrollToSection('contact')} className="hidden md:block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
                             Get Started
                         </button>
 
-                        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden">
+                        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-gray-700 dark:text-gray-300">
                             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
                     </div>
                 </div>
 
                 {mobileMenuOpen && (
-                    <div className="md:hidden bg-white border-t">
+                    <div className="md:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-800 transition-colors duration-300">
                         <div className="px-4 pt-2 pb-4 space-y-2">
-                            <button onClick={() => scrollToSection('home')} className="block w-full text-left py-2 text-gray-700">Home</button>
-                            <button onClick={() => scrollToSection('services')} className="block w-full text-left py-2 text-gray-700">Services</button>
-                            <button onClick={() => scrollToSection('process')} className="block w-full text-left py-2 text-gray-700">Process</button>
-                            <button onClick={() => scrollToSection('about')} className="block w-full text-left py-2 text-gray-700">About</button>
-                            <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-2 text-gray-700">Contact</button>
+                            <button onClick={() => scrollToSection('home')} className="block w-full text-left py-2 text-gray-700 dark:text-gray-300">Home</button>
+                            <button onClick={() => scrollToSection('services')} className="block w-full text-left py-2 text-gray-700 dark:text-gray-300">Services</button>
+                            <button onClick={() => scrollToSection('process')} className="block w-full text-left py-2 text-gray-700 dark:text-gray-300">Process</button>
+                            <button onClick={() => scrollToSection('about')} className="block w-full text-left py-2 text-gray-700 dark:text-gray-300">About</button>
+                            <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-2 text-gray-700 dark:text-gray-300">Contact</button>
+                            <div className="pt-2 border-t dark:border-gray-800">
+                                <ThemeSwitcher />
+                            </div>
                         </div>
                     </div>
                 )}
             </nav>
 
             {/* Hero Section */}
-            <section id="home" className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-white">
+            <section id="home" className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
                                 Build a Strong HR Foundation for Your Growing Startup
                             </h1>
-                            <p className="text-lg text-gray-600 mb-8">
+                            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 transition-colors duration-300">
                                 Clear, practical, and scalable people systems without unnecessary bureaucracy.
                                 Perfect for early-stage startups and small organizations.
                             </p>
@@ -90,7 +95,7 @@ const TalentHQWebsite = () => {
                                     Get Your Free Consultation
                                     <ArrowRight className="ml-2" size={20} />
                                 </button>
-                                <button onClick={() => scrollToSection('services')} className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition">
+                                <button onClick={() => scrollToSection('services')} className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 px-8 py-3 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/30 transition">
                                     Learn More
                                 </button>
                             </div>
@@ -112,8 +117,8 @@ const TalentHQWebsite = () => {
                                         <img
                                             src={image.src}
                                             alt={image.alt}
-                                            className={`w-full h-full ${image.isLogo
-                                                ? 'object-contain bg-gradient-to-br from-blue-50 to-white p-12'
+                                            className={`w-full h-full transition-opacity duration-1000 ${image.isLogo
+                                                ? 'object-contain bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 p-12 dark:invert dark:brightness-200'
                                                 : 'object-cover'
                                                 }`}
                                         />
@@ -129,13 +134,13 @@ const TalentHQWebsite = () => {
             </section>
 
             {/* Problem Section */}
-            <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+            <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
                 <div className="max-w-7xl mx-auto">
                     <div className="max-w-3xl mx-auto text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
                             Early-Stage Startups Often Grow Faster Than Their Internal Structures
                         </h2>
-                        <p className="text-lg text-gray-600">
+                        <p className="text-lg text-gray-600 dark:text-gray-400 transition-colors duration-300">
                             While flexibility is helpful at the beginning, the lack of clear people policies,
                             documentation, and processes can lead to avoidable misunderstandings, compliance risks,
                             and management strain.
@@ -151,11 +156,18 @@ const TalentHQWebsite = () => {
                             <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-green-500 rounded-br-3xl opacity-50"></div>
 
                             {/* Image container with gradient background */}
-                            <div className="relative bg-gradient-to-br from-blue-50 via-white to-green-50 p-6 rounded-2xl shadow-xl transform hover:shadow-2xl transition-all duration-300">
+                            <div className="relative bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-gray-700 dark:via-gray-800 dark:to-gray-700 p-6 rounded-2xl shadow-xl transform hover:shadow-2xl transition-all duration-300">
+                                {/* Light Mode Illustration */}
                                 <img
                                     src={`${process.env.PUBLIC_URL}/images/team-growth.png`}
-                                    alt="Startup team growth and organizational structure"
-                                    className="w-full h-auto rounded-lg relative z-10"
+                                    alt="Startup team growth"
+                                    className="w-full h-auto rounded-lg relative z-10 dark:hidden"
+                                />
+                                {/* Dark Mode Illustration */}
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/images/team-growth-dark.png`}
+                                    alt="Startup team growth structure"
+                                    className="w-full h-auto rounded-lg relative z-10 hidden dark:block"
                                 />
                                 {/* Subtle inner glow */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 to-green-400/5 rounded-2xl"></div>
@@ -164,38 +176,38 @@ const TalentHQWebsite = () => {
 
                         {/* Problem Cards - Right Side (Stacked) */}
                         <div className="space-y-6">
-                            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
                                 <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <div className="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
                                         <span className="text-2xl">⚠️</span>
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-semibold mb-2">Compliance Risks</h3>
-                                        <p className="text-gray-600">Without proper documentation, you're exposed to legal and regulatory issues.</p>
+                                        <h3 className="text-xl font-semibold mb-2 dark:text-white">Compliance Risks</h3>
+                                        <p className="text-gray-600 dark:text-gray-400">Without proper documentation, you're exposed to legal and regulatory issues.</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
                                 <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <div className="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/40 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
                                         <span className="text-2xl">🤝</span>
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-semibold mb-2">Misunderstandings</h3>
-                                        <p className="text-gray-600">Unclear expectations lead to conflicts between management and staff.</p>
+                                        <h3 className="text-xl font-semibold mb-2 dark:text-white transition-colors">Misunderstandings</h3>
+                                        <p className="text-gray-600 dark:text-gray-400 transition-colors">Unclear expectations lead to conflicts between management and staff.</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
                                 <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/40 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
                                         <span className="text-2xl">😓</span>
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-semibold mb-3">Management Strain</h3>
-                                        <p className="text-gray-600">Leaders waste time on preventable people issues instead of growing the business.</p>
+                                        <h3 className="text-xl font-semibold mb-3 dark:text-white transition-colors">Management Strain</h3>
+                                        <p className="text-gray-600 dark:text-gray-400 transition-colors">Leaders waste time on preventable people issues instead of growing the business.</p>
                                     </div>
                                 </div>
                             </div>
@@ -205,175 +217,175 @@ const TalentHQWebsite = () => {
             </section>
 
             {/* Services Section */}
-            <section id="services" className="py-16 px-4 sm:px-6 lg:px-8">
+            <section id="services" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 transition-colors duration-300">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">HR Foundation Setup</h2>
-                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">HR Foundation Setup</h2>
+                        <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto transition-colors duration-300">
                             A lean HR foundation designed to help your company put simple, clear, and scalable
                             people structures in place.
                         </p>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div className="bg-white border-2 border-gray-200 p-6 rounded-xl hover:border-blue-500 hover:shadow-lg transition">
-                            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                                <Users className="text-blue-600" size={24} />
+                        <div className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 p-6 rounded-xl hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg transition-all">
+                            <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex items-center justify-center mb-4 transition-colors">
+                                <Users className="text-blue-600 dark:text-blue-400" size={24} />
                             </div>
-                            <h3 className="text-xl font-semibold mb-3">HR Review & Needs Assessment</h3>
-                            <p className="text-gray-600 mb-4">Review current practices, identify gaps and risks, and get practical recommendations.</p>
+                            <h3 className="text-xl font-semibold mb-3 dark:text-white transition-colors">HR Review & Needs Assessment</h3>
+                            <p className="text-gray-600 dark:text-gray-400 mb-4 transition-colors">Review current practices, identify gaps and risks, and get practical recommendations.</p>
                         </div>
 
-                        <div className="bg-white border-2 border-gray-200 p-6 rounded-xl hover:border-blue-500 hover:shadow-lg transition">
-                            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                                <FileText className="text-blue-600" size={24} />
+                        <div className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 p-6 rounded-xl hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg transition-all">
+                            <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex items-center justify-center mb-4 transition-colors">
+                                <FileText className="text-blue-600 dark:text-blue-400" size={24} />
                             </div>
-                            <h3 className="text-xl font-semibold mb-3">Employment Documentation</h3>
-                            <p className="text-gray-600 mb-4">Standardized contract templates with clear terms, aligned with labor laws.</p>
+                            <h3 className="text-xl font-semibold mb-3 dark:text-white">Employment Documentation</h3>
+                            <p className="text-gray-600 dark:text-gray-400 mb-4 transition-colors">Standardized contract templates with clear terms, aligned with labor laws.</p>
                         </div>
 
-                        <div className="bg-white border-2 border-gray-200 p-6 rounded-xl hover:border-blue-500 hover:shadow-lg transition">
-                            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                                <CheckCircle className="text-blue-600" size={24} />
+                        <div className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 p-6 rounded-xl hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg transition-all">
+                            <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex items-center justify-center mb-4 transition-colors">
+                                <CheckCircle className="text-blue-600 dark:text-blue-400" size={24} />
                             </div>
-                            <h3 className="text-xl font-semibold mb-3">Staff Handbook</h3>
-                            <p className="text-gray-600 mb-4">Company values, working hours, leave policies, code of conduct, and grievance procedures.</p>
+                            <h3 className="text-xl font-semibold mb-3 dark:text-white">Staff Handbook</h3>
+                            <p className="text-gray-600 dark:text-gray-400 mb-4 transition-colors">Company values, working hours, leave policies, code of conduct, and grievance procedures.</p>
                         </div>
 
-                        <div className="bg-white border-2 border-gray-200 p-6 rounded-xl hover:border-blue-500 hover:shadow-lg transition">
-                            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                                <span className="text-blue-600 text-2xl font-bold">₦</span>
+                        <div className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 p-6 rounded-xl hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg transition-all">
+                            <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex items-center justify-center mb-4 transition-colors">
+                                <span className="text-blue-600 dark:text-blue-400 text-2xl font-bold">₦</span>
                             </div>
-                            <h3 className="text-xl font-semibold mb-3">Pay & Leave Structure</h3>
-                            <p className="text-gray-600 mb-4">Documented salary structure, payment timelines, and leave entitlements.</p>
+                            <h3 className="text-xl font-semibold mb-3 dark:text-white">Pay & Leave Structure</h3>
+                            <p className="text-gray-600 dark:text-gray-400 mb-4 transition-colors">Documented salary structure, payment timelines, and leave entitlements.</p>
                         </div>
 
-                        <div className="bg-white border-2 border-gray-200 p-6 rounded-xl hover:border-blue-500 hover:shadow-lg transition">
-                            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                                <TrendingUp className="text-blue-600" size={24} />
+                        <div className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 p-6 rounded-xl hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg transition-all">
+                            <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex items-center justify-center mb-4 transition-colors">
+                                <TrendingUp className="text-blue-600 dark:text-blue-400" size={24} />
                             </div>
-                            <h3 className="text-xl font-semibold mb-3">Role Clarity & Structure</h3>
-                            <p className="text-gray-600 mb-4">Simple job descriptions and clear reporting lines for all current staff.</p>
+                            <h3 className="text-xl font-semibold mb-3 dark:text-white">Role Clarity & Structure</h3>
+                            <p className="text-gray-600 dark:text-gray-400 mb-4 transition-colors">Simple job descriptions and clear reporting lines for all current staff.</p>
                         </div>
 
-                        <div className="bg-white border-2 border-gray-200 p-6 rounded-xl hover:border-blue-500 hover:shadow-lg transition">
-                            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <div className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 p-6 rounded-xl hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg transition-all">
+                            <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex items-center justify-center mb-4 transition-colors">
                                 <span className="text-2xl">🎓</span>
                             </div>
-                            <h3 className="text-xl font-semibold mb-3">Management Handover</h3>
-                            <p className="text-gray-600 mb-4">Walk-through of all documents with practical guidance on day-to-day application.</p>
+                            <h3 className="text-xl font-semibold mb-3 dark:text-white">Management Handover</h3>
+                            <p className="text-gray-600 dark:text-gray-400 mb-4 transition-colors">Walk-through of all documents with practical guidance on day-to-day application.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Process/Timeline Section */}
-            <section id="process" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+            <section id="process" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Process</h2>
-                        <p className="text-lg text-gray-600">Completed within 2–4 weeks</p>
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">Our Process</h2>
+                        <p className="text-lg text-gray-600 dark:text-gray-400 transition-colors duration-300">Completed within 2–4 weeks</p>
                     </div>
 
                     <div className="grid md:grid-cols-4 gap-6">
-                        <div className="bg-white p-6 rounded-xl shadow-md">
+                        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md transition-colors duration-300">
                             <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
-                            <h3 className="text-lg font-semibold mb-2">Week 1</h3>
-                            <p className="text-gray-600">Initial briefing and interviews with key staff members</p>
+                            <h3 className="text-lg font-semibold mb-2 dark:text-white transition-colors">Week 1</h3>
+                            <p className="text-gray-600 dark:text-gray-400 transition-colors">Initial briefing and interviews with key staff members</p>
                         </div>
 
-                        <div className="bg-white p-6 rounded-xl shadow-md">
+                        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md transition-colors duration-300">
                             <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
-                            <h3 className="text-lg font-semibold mb-2">Week 2</h3>
-                            <p className="text-gray-600">Submission of initial deliverables for review</p>
+                            <h3 className="text-lg font-semibold mb-2 dark:text-white transition-colors">Week 2</h3>
+                            <p className="text-gray-600 dark:text-gray-400 transition-colors">Submission of initial deliverables for review</p>
                         </div>
 
-                        <div className="bg-white p-6 rounded-xl shadow-md">
+                        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md transition-colors duration-300">
                             <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
-                            <h3 className="text-lg font-semibold mb-2">Week 3</h3>
-                            <p className="text-gray-600">Final submission of all deliverables</p>
+                            <h3 className="text-lg font-semibold mb-2 dark:text-white transition-colors">Week 3</h3>
+                            <p className="text-gray-600 dark:text-gray-400 transition-colors">Final submission of all deliverables</p>
                         </div>
 
-                        <div className="bg-white p-6 rounded-xl shadow-md">
+                        <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md transition-colors duration-300">
                             <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">4</div>
-                            <h3 className="text-lg font-semibold mb-2">Week 4</h3>
-                            <p className="text-gray-600">Documents walkthrough and policy application guidance</p>
+                            <h3 className="text-lg font-semibold mb-2 dark:text-white transition-colors">Week 4</h3>
+                            <p className="text-gray-600 dark:text-gray-400 transition-colors">Documents walkthrough and policy application guidance</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Pricing Section */}
-            <section className="py-16 px-4 sm:px-6 lg:px-8">
+            <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 transition-colors duration-300">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">Investment</h2>
-                        <p className="text-lg text-gray-600">Simple, transparent pricing</p>
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Investment</h2>
+                        <p className="text-lg text-gray-600 dark:text-gray-400">Simple, transparent pricing</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                        <div className="bg-white border-2 border-blue-600 p-8 rounded-xl shadow-lg">
-                            <h3 className="text-2xl font-bold mb-2">HR Foundation Setup</h3>
-                            <div className="text-4xl font-bold text-blue-600 mb-4">₦350,000</div>
-                            <p className="text-gray-600 mb-6">Complete foundation setup with all deliverables</p>
+                        <div className="bg-white dark:bg-gray-800 border-2 border-blue-600 p-8 rounded-xl shadow-lg transition-colors duration-300">
+                            <h3 className="text-2xl font-bold mb-2 dark:text-white">HR Foundation Setup</h3>
+                            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-4 transition-colors">₦350,000</div>
+                            <p className="text-gray-600 dark:text-gray-400 mb-6 transition-colors">Complete foundation setup with all deliverables</p>
                             <ul className="space-y-3 mb-6">
                                 <li className="flex items-start gap-2">
                                     <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={20} />
-                                    <span className="text-gray-700">HR Audit & Recommendations</span>
+                                    <span className="text-gray-700 dark:text-gray-300 transition-colors">HR Audit & Recommendations</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={20} />
-                                    <span className="text-gray-700">Employment Contracts</span>
+                                    <span className="text-gray-700 dark:text-gray-300 transition-colors">Employment Contracts</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={20} />
-                                    <span className="text-gray-700">Staff Handbook</span>
+                                    <span className="text-gray-700 dark:text-gray-300 transition-colors">Staff Handbook</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={20} />
-                                    <span className="text-gray-700">Job Descriptions</span>
+                                    <span className="text-gray-700 dark:text-gray-300 transition-colors">Job Descriptions</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={20} />
-                                    <span className="text-gray-700">Pay Structure Documentation</span>
+                                    <span className="text-gray-700 dark:text-gray-300 transition-colors">Pay Structure Documentation</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={20} />
-                                    <span className="text-gray-700">Management Training Session</span>
+                                    <span className="text-gray-700 dark:text-gray-300 transition-colors">Management Training Session</span>
                                 </li>
                             </ul>
-                            <div className="text-sm text-gray-600 mb-4">
+                            <div className="text-sm text-gray-600 dark:text-gray-400 mb-4 transition-colors">
                                 Payment: 50% upfront, 50% on completion
                             </div>
                         </div>
 
-                        <div className="bg-white border-2 border-gray-200 p-8 rounded-xl shadow-lg">
-                            <h3 className="text-2xl font-bold mb-2">Ongoing HR Support</h3>
-                            <div className="text-4xl font-bold text-gray-900 mb-4">₦100,000<span className="text-lg text-gray-600">/month</span></div>
-                            <p className="text-gray-600 mb-6">Optional continuous advisory support</p>
+                        <div className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 p-8 rounded-xl shadow-lg transition-colors duration-300">
+                            <h3 className="text-2xl font-bold mb-2 dark:text-white">Ongoing HR Support</h3>
+                            <div className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors">₦100,000<span className="text-lg text-gray-600 dark:text-gray-400">/month</span></div>
+                            <p className="text-gray-600 dark:text-gray-400 mb-6 transition-colors">Optional continuous advisory support</p>
                             <ul className="space-y-3 mb-6">
                                 <li className="flex items-start gap-2">
                                     <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={20} />
-                                    <span className="text-gray-700">Staff Guidance</span>
+                                    <span className="text-gray-700 dark:text-gray-300 transition-colors">Staff Guidance</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={20} />
-                                    <span className="text-gray-700">Performance Check-ins</span>
+                                    <span className="text-gray-700 dark:text-gray-300 transition-colors">Performance Check-ins</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={20} />
-                                    <span className="text-gray-700">Hiring & Onboarding Support</span>
+                                    <span className="text-gray-700 dark:text-gray-300 transition-colors">Hiring & Onboarding Support</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={20} />
-                                    <span className="text-gray-700">HR Policy Updates</span>
+                                    <span className="text-gray-700 dark:text-gray-300 transition-colors">HR Policy Updates</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={20} />
-                                    <span className="text-gray-700">Compliance Monitoring</span>
+                                    <span className="text-gray-700 dark:text-gray-300 transition-colors">Compliance Monitoring</span>
                                 </li>
                             </ul>
-                            <div className="text-sm text-gray-600">
+                            <div className="text-sm text-gray-600 dark:text-gray-400 transition-colors">
                                 Available after foundation setup
                             </div>
                         </div>
@@ -382,8 +394,12 @@ const TalentHQWebsite = () => {
             </section>
 
             {/* About Section */}
-            <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
+            <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 transition-colors duration-300 relative overflow-hidden">
+                {/* Background decorative elements */}
+                <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-50 dark:bg-blue-900/10 -skew-x-12 transform origin-top-right transition-colors"></div>
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-green-50 dark:bg-green-900/10 rounded-full blur-3xl transition-colors"></div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         {/* Consultant Photo */}
                         <div className="order-2 md:order-1 relative">
@@ -397,47 +413,47 @@ const TalentHQWebsite = () => {
                                 <div className="absolute -bottom-3 -right-3 w-20 h-20 bg-green-500 rounded-full opacity-20"></div>
 
                                 {/* Image with frame */}
-                                <div className="relative bg-white p-3 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+                                <div className="relative bg-white dark:bg-gray-800 p-3 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
                                     <img
                                         src={`${process.env.PUBLIC_URL}/images/moshood.png`}
                                         alt="Moshood Abayomi Hassan - HR Consultant"
                                         className="w-full h-auto rounded-xl"
                                     />
                                     {/* Professional badge overlay */}
-                                    <div className="absolute bottom-6 left-6 bg-white px-4 py-2 rounded-lg shadow-lg transform hover:scale-110 transition-transform">
-                                        <p className="text-sm font-semibold text-blue-600">8+ Years Experience</p>
+                                    <div className="absolute bottom-6 left-6 bg-white dark:bg-gray-900 px-4 py-2 rounded-lg shadow-lg transform hover:scale-110 transition-transform">
+                                        <p className="text-sm font-semibold text-blue-600 dark:text-blue-400">8+ Years Experience</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div className="order-1 md:order-2">
-                            <h2 className="text-3xl font-bold text-gray-900 mb-6">Meet Your HR Consultant</h2>
-                            <h3 className="text-2xl font-semibold text-blue-600 mb-4">Moshood Abayomi Hassan</h3>
-                            <p className="text-gray-700 mb-4">
+                            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">Meet Your HR Consultant</h2>
+                            <h3 className="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4 transition-colors">Moshood Abayomi Hassan</h3>
+                            <p className="text-gray-700 dark:text-gray-300 mb-4 transition-colors">
                                 An HR professional with over 8 years' experience helping growing organizations put clear,
                                 practical, and scalable people systems in place.
                             </p>
-                            <p className="text-gray-700 mb-4">
+                            <p className="text-gray-700 dark:text-gray-300 mb-4 transition-colors">
                                 He has worked across financial services, media, outsourcing, and high-growth environments,
                                 supporting teams at different stages of growth.
                             </p>
-                            <p className="text-gray-700 mb-6">
+                            <p className="text-gray-700 dark:text-gray-300 mb-6 transition-colors">
                                 He specializes in translating business goals into lean HR structures that improve role
                                 clarity and performance without introducing unnecessary bureaucracy.
                             </p>
                             <div className="space-y-2">
                                 <div className="flex items-center gap-2">
                                     <CheckCircle className="text-green-500" size={20} />
-                                    <span className="text-gray-700">HND in Office Technology & Management</span>
+                                    <span className="text-gray-700 dark:text-gray-300 transition-colors">HND in Office Technology & Management</span>
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <CheckCircle className="text-green-500" size={20} />
-                                    <span className="text-gray-700">BSc in Business Administration</span>
+                                    <span className="text-gray-700 dark:text-gray-300 transition-colors">BSc in Business Administration</span>
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <CheckCircle className="text-green-500" size={20} />
-                                    <span className="text-gray-700">Associate, Chartered Institute of Personnel Management (ACIPM)</span>
+                                    <span className="text-gray-700 dark:text-gray-300 transition-colors">Associate, Chartered Institute of Personnel Management (ACIPM)</span>
                                 </div>
                             </div>
                         </div>
@@ -446,7 +462,7 @@ const TalentHQWebsite = () => {
             </section>
 
             {/* Expertise Section */}
-            <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
+            <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Expertise Content - Left Side */}
@@ -454,45 +470,45 @@ const TalentHQWebsite = () => {
                             {/* Decorative background element */}
                             <div className="absolute -top-8 -left-8 w-32 h-32 bg-blue-200 rounded-full opacity-20 blur-2xl"></div>
 
-                            <div className="relative bg-white p-8 rounded-xl shadow-lg transform hover:shadow-2xl transition-all duration-300">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
+                            <div className="relative bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg transition-colors duration-300 transform hover:shadow-2xl transition-all duration-300">
+                                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-3">
                                     <div className="w-1 h-8 bg-gradient-to-b from-blue-600 to-green-600 rounded-full"></div>
                                     Areas of Expertise
                                 </h3>
                                 <div className="space-y-5">
                                     <div className="flex items-start gap-4 group">
-                                        <div className="w-3 h-3 bg-blue-600 rounded-full mt-2 group-hover:scale-125 transition-transform"></div>
+                                        <div className="w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 group-hover:scale-125 transition-transform"></div>
                                         <div>
-                                            <h4 className="font-semibold text-gray-900 text-lg">HR Operations</h4>
-                                            <p className="text-sm text-gray-600">Building efficient people systems</p>
+                                            <h4 className="font-semibold text-gray-900 dark:text-white text-lg transition-colors">HR Operations</h4>
+                                            <p className="text-sm text-gray-600 dark:text-gray-400 transition-colors">Building efficient people systems</p>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4 group">
-                                        <div className="w-3 h-3 bg-green-600 rounded-full mt-2 group-hover:scale-125 transition-transform"></div>
+                                        <div className="w-3 h-3 bg-green-600 dark:bg-green-400 rounded-full mt-2 group-hover:scale-125 transition-transform"></div>
                                         <div>
-                                            <h4 className="font-semibold text-gray-900 text-lg">Talent Acquisition</h4>
-                                            <p className="text-sm text-gray-600">Finding and hiring the right people</p>
+                                            <h4 className="font-semibold text-gray-900 dark:text-white text-lg transition-colors">Talent Acquisition</h4>
+                                            <p className="text-sm text-gray-600 dark:text-gray-400 transition-colors">Finding and hiring the right people</p>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4 group">
-                                        <div className="w-3 h-3 bg-blue-600 rounded-full mt-2 group-hover:scale-125 transition-transform"></div>
+                                        <div className="w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 group-hover:scale-125 transition-transform"></div>
                                         <div>
-                                            <h4 className="font-semibold text-gray-900 text-lg">Performance Management</h4>
-                                            <p className="text-sm text-gray-600">Driving team productivity</p>
+                                            <h4 className="font-semibold text-gray-900 dark:text-white text-lg transition-colors">Performance Management</h4>
+                                            <p className="text-sm text-gray-600 dark:text-gray-400 transition-colors">Driving team productivity</p>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4 group">
-                                        <div className="w-3 h-3 bg-green-600 rounded-full mt-2 group-hover:scale-125 transition-transform"></div>
+                                        <div className="w-3 h-3 bg-green-600 dark:bg-green-400 rounded-full mt-2 group-hover:scale-125 transition-transform"></div>
                                         <div>
-                                            <h4 className="font-semibold text-gray-900 text-lg">Workforce Planning</h4>
-                                            <p className="text-sm text-gray-600">Strategic team growth</p>
+                                            <h4 className="font-semibold text-gray-900 dark:text-white text-lg transition-colors">Workforce Planning</h4>
+                                            <p className="text-sm text-gray-600 dark:text-gray-400 transition-colors">Strategic team growth</p>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4 group">
-                                        <div className="w-3 h-3 bg-blue-600 rounded-full mt-2 group-hover:scale-125 transition-transform"></div>
+                                        <div className="w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 group-hover:scale-125 transition-transform"></div>
                                         <div>
-                                            <h4 className="font-semibold text-gray-900 text-lg">Employee Engagement</h4>
-                                            <p className="text-sm text-gray-600">Creating positive work cultures</p>
+                                            <h4 className="font-semibold text-gray-900 dark:text-white text-lg transition-colors">Employee Engagement</h4>
+                                            <p className="text-sm text-gray-600 dark:text-gray-400 transition-colors">Creating positive work cultures</p>
                                         </div>
                                     </div>
                                 </div>
@@ -509,16 +525,23 @@ const TalentHQWebsite = () => {
                             <div className="absolute -bottom-6 -left-6 w-24 h-24 border-4 border-green-400 rounded-bl-3xl opacity-30"></div>
 
                             {/* Services card with offset */}
-                            <div className="relative bg-white p-8 rounded-2xl shadow-2xl border-2 border-gray-100 hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-2">
+                            <div className="relative bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl border-2 border-gray-100 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2">
                                 {/* Header badge */}
                                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-full shadow-lg">
                                     <p className="text-sm font-semibold">Our Services</p>
                                 </div>
 
+                                {/* Light Mode Illustration */}
                                 <img
                                     src={`${process.env.PUBLIC_URL}/images/services-illustration.png`}
                                     alt="HR services and documentation"
-                                    className="w-full h-auto rounded-lg mt-4"
+                                    className="w-full h-auto rounded-lg mt-4 dark:hidden"
+                                />
+                                {/* Dark Mode Illustration */}
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/images/services-illustration-dark.png`}
+                                    alt="HR services and documentation"
+                                    className="w-full h-auto rounded-lg mt-4 hidden dark:block"
                                 />
 
                                 {/* Decorative animated dots */}
@@ -552,26 +575,26 @@ const TalentHQWebsite = () => {
             </section >
 
             {/* Contact Section */}
-            < section id="contact" className="py-16 px-4 sm:px-6 lg:px-8" >
+            < section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 transition-colors duration-300" >
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-                        <p className="text-lg text-gray-600">Let's discuss how we can help your organization grow</p>
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 transition-colors">Get In Touch</h2>
+                        <p className="text-lg text-gray-600 dark:text-gray-400 transition-colors">Let's discuss how we can help your organization grow</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
                         <div>
-                            <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+                            <h3 className="text-xl font-semibold mb-6 dark:text-white">Contact Information</h3>
                             <div className="space-y-4">
                                 <div className="flex items-start gap-4">
                                     <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                         <Mail className="text-blue-600" size={24} />
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold mb-1">Email</h4>
-                                        <a href="mailto:careers.mhtalents@gmail.com" className="text-blue-600 hover:underline">careers.mhtalents@gmail.com</a>
+                                        <h4 className="font-semibold mb-1 dark:text-white">Email</h4>
+                                        <a href="mailto:careers.mhtalents@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">careers.mhtalents@gmail.com</a>
                                         <br />
-                                        <a href="mailto:moshoodhassan11@gmail.com" className="text-blue-600 hover:underline">moshoodhassan11@gmail.com</a>
+                                        <a href="mailto:moshoodhassan11@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">moshoodhassan11@gmail.com</a>
                                     </div>
                                 </div>
 
@@ -580,22 +603,22 @@ const TalentHQWebsite = () => {
                                         <Phone className="text-blue-600" size={24} />
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold mb-1">Phone</h4>
-                                        <a href="tel:+2348138584744" className="text-blue-600 hover:underline">+234 813 858 4744</a>
+                                        <h4 className="font-semibold mb-1 dark:text-white">Phone</h4>
+                                        <a href="tel:+2348138584744" className="text-blue-600 dark:text-blue-400 hover:underline">+234 813 858 4744</a>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="mt-8 p-6 bg-blue-50 rounded-xl">
-                                <h4 className="font-semibold text-gray-900 mb-2">Office Hours</h4>
-                                <p className="text-gray-700">Monday - Friday: 9:00 AM - 5:00 PM</p>
-                                <p className="text-gray-700">Response time: Within 24 hours</p>
+                            <div className="mt-8 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-xl transition-colors">
+                                <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Office Hours</h4>
+                                <p className="text-gray-700 dark:text-gray-300 transition-colors">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                                <p className="text-gray-700 dark:text-gray-300 transition-colors">Response time: Within 24 hours</p>
                             </div>
                         </div>
 
-                        <div className="bg-gray-50 p-8 rounded-xl">
-                            <h3 className="text-xl font-semibold mb-4">Quick Inquiry</h3>
-                            <p className="text-gray-600 mb-4">
+                        <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl transition-colors">
+                            <h3 className="text-xl font-semibold mb-4 dark:text-white transition-colors">Quick Inquiry</h3>
+                            <p className="text-gray-600 dark:text-gray-400 mb-4 transition-colors">
                                 Send us an email to discuss your HR needs and get a customized proposal.
                             </p>
                             <div className="space-y-4">
@@ -604,15 +627,15 @@ const TalentHQWebsite = () => {
                                     <ul className="space-y-2">
                                         <li className="flex items-start gap-2">
                                             <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} />
-                                            <span className="text-sm text-gray-700">Free initial consultation</span>
+                                            <span className="text-sm text-gray-700 dark:text-gray-300 transition-colors">Free initial consultation</span>
                                         </li>
                                         <li className="flex items-start gap-2">
                                             <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} />
-                                            <span className="text-sm text-gray-700">Customized proposal for your needs</span>
+                                            <span className="text-sm text-gray-700 dark:text-gray-300 transition-colors">Customized proposal for your needs</span>
                                         </li>
                                         <li className="flex items-start gap-2">
                                             <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} />
-                                            <span className="text-sm text-gray-700">No obligation to proceed</span>
+                                            <span className="text-sm text-gray-700 dark:text-gray-300 transition-colors">No obligation to proceed</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -626,14 +649,14 @@ const TalentHQWebsite = () => {
             </section >
 
             {/* Footer */}
-            < footer className="bg-gray-900 text-white py-8" >
+            < footer className="bg-gray-900 dark:bg-black text-white py-8 transition-colors duration-300" >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center">
                         <div className="text-2xl font-bold mb-2">TalentHQ Nigeria</div>
-                        <p className="text-gray-400 mb-4">
+                        <p className="text-gray-400 dark:text-gray-500 mb-4">
                             Helping startups and small firms put lean HR structures in place and drive productivity
                         </p>
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm text-gray-500 dark:text-gray-600">
                             © {new Date().getFullYear()} TalentHQ Nigeria. All rights reserved.
                         </p>
                     </div>
