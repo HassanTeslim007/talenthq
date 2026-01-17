@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/talenthq/static/css/main.3edb7acd.css",
-    "main.js": "/talenthq/static/js/main.a8efdfcf.js",
+    "main.css": "/talenthq/static/css/main.01e69f49.css",
+    "main.js": "/talenthq/static/js/main.9af80544.js",
     "static/js/453.ecd964ff.chunk.js": "/talenthq/static/js/453.ecd964ff.chunk.js",
     "index.html": "/talenthq/index.html",
-    "main.3edb7acd.css.map": "/talenthq/static/css/main.3edb7acd.css.map",
-    "main.a8efdfcf.js.map": "/talenthq/static/js/main.a8efdfcf.js.map",
+    "main.01e69f49.css.map": "/talenthq/static/css/main.01e69f49.css.map",
+    "main.9af80544.js.map": "/talenthq/static/js/main.9af80544.js.map",
     "453.ecd964ff.chunk.js.map": "/talenthq/static/js/453.ecd964ff.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3edb7acd.css",
-    "static/js/main.a8efdfcf.js"
+    "static/css/main.01e69f49.css",
+    "static/js/main.9af80544.js"
   ]
 }
